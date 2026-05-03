@@ -1,25 +1,3 @@
-# ────────────────────────────────────────────────────────────────────────────
-# SPAWNERS
-# ────────────────────────────────────────────────────────────────────────────
-# Evolved Spawners are placeable structures that produce mob drops over time.
-# Players craft a Spawner Core from fragments, place it, and left-click to
-# harvest stored drops when ready.
-#
-# Each spawner type key must be unique (lowercase, underscore-separated).
-#
-# Spawner fields:
-#   display-name         Human-readable name shown in GUIs and messages.
-#   entity               Bukkit EntityType name (CHICKEN, ZOMBIE, etc.).
-#   spawn-seconds        Seconds between each drop production cycle.
-#   drop-item            Bukkit Material name of the item produced each cycle.
-#   track                Skill track this spawner belongs to (usually SLAYING).
-#   fragment-chance      0.0–1.0 chance to drop a Fragment on harvest.
-#   max-level            Max upgrade level. Each level reduces spawn-seconds.
-#   upgrade-base-cost    Money cost for the first upgrade.
-#   upgrade-cost-multiplier  Multiplier applied per level to upgrade cost.
-#   max-storage-base     Max stored drops at level 1 before harvesting required.
-# ────────────────────────────────────────────────────────────────────────────
-
 types:
   chicken:
     display-name: Chicken Spawner

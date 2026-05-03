@@ -7,49 +7,13 @@ runtime:
 daily-reset:
   time-zone: UTC
   local-time: 00:00
-# ────────────────────────────────────────────────────────────────────────────
-# MESSAGES
-# ────────────────────────────────────────────────────────────────────────────
-# All player-facing messages sent by the plugin.
-# Color codes: use & followed by a color code (e.g. &a = green, &c = red, &7 = gray,
-# &6 = gold, &f = white, &b = aqua, &e = yellow). Use &l for bold, &r to reset.
-#
-# Available placeholders by key (not all keys use all placeholders):
-#   %track%      — Skill track name (Mining / Farming / Slaying)
-#   %level%      — Level number
-#   %tier%       — Upgrade tier number
-#   %name%       — Display name (milestone, node type, spawner type, challenge, etc.)
-#   %type%       — Node or spawner type name
-#   %amount%     — Quantity of items
-#   %material%   — Readable material name
-#   %cost%       — Money cost (formatted with commas, e.g. $1,000.00)
-#   %limit%      — Placement limit count
-#   %seconds%    — Cooldown remaining in seconds
-#   %task%       — Journey or daily task display name
-#   %progress%   — Current task progress count
-#   %target%     — Task completion target
-#   %current%    — Current count (used in daily one-block requirement message)
-#   %pool%       — Treasure pool name
-#   %error%      — Error detail string
-#   %rewards%    — Formatted reward summary string
-#   %fragments%  — Fragment quantity required
-#   %count%      — Prestige count
-#   %stage%      — Daily task stage number
-#   %skill_xp%   — Skill XP awarded (in milestone-claimed)
-#   %player_xp%  — Player XP awarded (in milestone-claimed / daily-stage-claimed)
-#   %perk%       — Perk name (in perk-upgraded)
-#   %required%   — Required count (in milestone-requirements-not-met)
-# ────────────────────────────────────────────────────────────────────────────
 messages:
-  # Plugin prefix — prepended to every message sent by EvolvedSkills.
   prefix: '&8[&aEvolvedSkills&8] &7'
 
-  # One Block
   island-created: '&aYour island has been created! Break your One Block to get started.'
   daily-oneblock-already-claimed: '&cYou already claimed today''s one-block daily reward.'
   daily-oneblock-requirement-not-met: '&cRequirement not met. Break &f%target% &cone-blocks today (current: &f%current%&c).'
 
-  # Daily Tasks
   daily-reset: '&aYour daily tasks have reset! New challenges await.'
   daily-stage-claimed: '&aYou claimed stage &f%stage% &aof &f%task%&7! +%player_xp% Player XP.'
   daily-all-claimed: '&bAll daily stages claimed! Come back tomorrow.'
@@ -57,12 +21,10 @@ messages:
   daily-task-unconfigured: '&cThis daily task is no longer configured.'
   daily-stage-not-ready: '&cStage not complete for &f%task%&c. Still need &f%remaining%&c more.'
 
-  # Daily Challenges
   challenge-complete: '&6Challenge Complete! &f%name% &7is ready to claim.'
   challenge-already-claimed: '&7This challenge has already been claimed.'
   challenge-not-complete: '&cChallenge not yet complete.'
 
-  # Skills & Player Levels
   skill-level-up: '&6&lSkill Level Up! &r&a%track% &7is now level &f%level%&7.'
   player-level-up: '&b&lPlayer Level Up! &r&7You are now Player Level &f%level%&7.'
   player-level-reward-already-claimed: '&7You already claimed level &f%level% &7reward.'
@@ -70,25 +32,21 @@ messages:
   prestige-insufficient-funds: '&cNot enough money to prestige. Cost: &f$%cost%&c.'
   prestige-success: '&6&lPrestige! &7You are now Prestige &f%count%&7. Stats reset.'
 
-  # Milestones
   milestone-claimed: '&aYou claimed &f%name% &7tier %tier%! +%skill_xp% Skill XP, +%player_xp% Player XP.'
   milestone-all-claimed: '&7All tiers for &f%name% &7are already claimed.'
   milestone-requirements-not-met: '&cRequirements not met. Need &f%required% &c%name%, have &f%progress%&c.'
   milestone-ready: '&6Milestone Ready! &f%name% &7Tier &f%tier% &7— Open Skills to claim.'
 
-  # Perks
   perk-upgraded: '&aUpgraded &f%perk% &7to tier &f%tier%&7!'
   perk-max-tier: '&cThis perk is already at maximum tier.'
   perk-insufficient-funds: '&cYou need &f$%cost% &cto upgrade this perk.'
   perk-locked: '&cYou must reach &f%track% &cLevel &f%level% &cto unlock this perk slot.'
 
-  # Journey
   journey-task-locked: '&cThis journey task is still locked.'
   journey-task-already-claimed: '&7Journey task &f%task% &7already claimed.'
   journey-task-incomplete: '&cTask incomplete: &f%task% &7(&f%progress%&7/&f%target%&7).'
   journey-task-complete: '&6Journey Task Complete! &f%task% &7— Open the Journey menu to claim.'
 
-  # Resource Nodes
   node-placed: '&aYou placed a &f%type% &aResource Node.'
   node-reclaimed: '&aYou reclaimed your &f%type% &aResource Node.'
   node-harvest: '&aHarvested &f%amount%x %type% &afrom your Resource Node.'
@@ -102,7 +60,6 @@ messages:
   node-not-your-island: '&cYou can only harvest nodes on your own island.'
   node-type-unconfigured: '&cNode type is no longer configured.'
 
-  # Spawners
   spawner-placed: '&aYou placed a &f%type% &aSpawner.'
   spawner-reclaimed: '&aYou reclaimed your &f%type% &aSpawner.'
   spawner-type-unconfigured: '&cSpawner type is no longer configured.'
@@ -114,7 +71,6 @@ messages:
   spawner-upgraded: '&aSpawner upgraded to level &f%level%&a.'
   spawner-max-level: '&cThis spawner is already at max level.'
 
-  # Generators
   generator-reclaimed: '&aGenerator reclaimed.'
   generator-wrong-island: '&cThis generator belongs to another island.'
   generator-storage-empty: '&7The &f%track% &7generator storage is empty.'
@@ -122,13 +78,11 @@ messages:
   generator-limit-reached: '&cYou''ve reached the &f%track% &cGenerator limit (&f%limit%&c). Upgrade your Generator Limit perk.'
   generator-must-be-online: '&cYou must be online to claim generator storage.'
 
-  # Growth Limits
   growth-limit-maxed: '&cGrowth limit for &f%type% &cis already maxed.'
   growth-limit-insufficient-fragments: '&cNot enough fragments. Upgrade requires &f%cost% &cFarming Fragment(s).'
   growth-limit-insufficient-funds: '&cNot enough money. Upgrade costs &f$%cost%&c.'
   growth-limit-upgraded: '&aGrowth limit for &f%type% &aupgraded to tier &f%tier%&a.'
 
-  # Placement Limits (node & spawner caps per island)
   limits-need-island: '&cYou need an island to upgrade limits.'
   limits-node-maxed: '&c%type% Node limit is already maxed.'
   limits-spawner-maxed: '&c%type% Spawner limit is already maxed.'
@@ -138,14 +92,12 @@ messages:
   limits-spawner-insufficient-fragments: '&cNot enough fragments. Requires &f%fragments% &c%type% Fragment(s).'
   limits-insufficient-funds: '&cNot enough money. Limit upgrade cost: &f$%cost%&c.'
 
-  # Treasure & Rewards
   fragment-drop: '&7+&f1 &7%type% Fragment'
   treasure-drop: '&7You found a &f%pool% &7Treasure Token!'
   treasure-empty-pool: '&7The &f%pool% &7treasure pool has no entries yet.'
   reward-received: '&7Reward: &f%rewards%'
   reward-money-failed: '&cFailed to deposit reward money: %error%'
 
-  # Misc
   not-your-island: '&cYou can only do that on your own island.'
   location-occupied: '&cThis location is already occupied by another evolved object.'
 xp:
@@ -327,15 +279,12 @@ perks:
   - 500000
   - 700000
   - 1000000
-  # Per-perk-level bonus applied when the perk is active.
-  # Each bonus is a multiplier addend: e.g. 0.2 = +20% per perk level.
   effects:
     crop-growth-bonus-per-level: 0.20      # Farming perk 1: bonus crop growth trigger chance
     node-yield-bonus-per-level: 0.03       # Mining/Farming perk 1: node yield speed bonus
     spawner-speed-bonus-per-level: 0.20    # Slaying perk 1: spawner production speed bonus
     generator-yield-bonus-per-level: 0.02  # All perk 3: generator yield multiplier per level
     oneblock-drop-bonus-per-level: 0.01    # All perk 2: oneblock bonus drop chance per level
-  # Fragment & treasure drop bonuses (separate from perk-slot effects above)
   fragment-chance-per-level: 0.20    # Perk 2 (Fragment Chance): multiplier per level on fragment drop rate
   fragment-base-chance: 0.03         # Base fragment drop chance before perk bonus
   treasure-chance-bonus-per-level: 0.10  # Perk 3 (Treasure Chance): additive bonus per level
@@ -347,20 +296,6 @@ daily:
     reward-player-xp: 50
     reward-items:
     - DIAMOND:2
-  # ────────────────────────────────────────────────────────────────────────────
-  # DAILY TASKS  (the 3 core progress bars)
-  # ────────────────────────────────────────────────────────────────────────────
-  # These are the three ongoing daily tasks everyone sees in /daily.
-  # Each task has 10 stages; players claim stages one at a time.
-  #
-  # Fields:
-  #   display-name          — Name shown in the GUI.
-  #   icon                  — Material for the inventory icon.
-  #   stage-targets         — List of 10 cumulative target values (one per stage).
-  #   stage-reward-money    — Vault money given per stage claim.
-  #   stage-reward-skill-xp — Skill XP given per stage claim.
-  #   stage-player-xp-rewards — List of 10 Player XP values (one per stage).
-  # ────────────────────────────────────────────────────────────────────────────
   tasks:
     mine_resources:
       display-name: Mine Resources
@@ -443,53 +378,10 @@ daily:
       - 80
       - 90
       - 100
-  # ────────────────────────────────────────────────────────────────────────────
-  # DAILY CHALLENGES
-  # ────────────────────────────────────────────────────────────────────────────
-  # How it works:
-  #   - Each day, `count` challenges are randomly selected from the pool below.
-  #   - Players see challenges based on which SLOT permission nodes they hold.
-  #   - Slot 1 = evolvedskills.challenges.1, Slot 2 = evolvedskills.challenges.2 … up to 14.
-  #   - A player with perms for slots 1-3 sees 3 random challenges per day.
-  #   - Challenges reset at the daily reset time (see daily-reset section above).
-  #
-  # Assigning slots to ranks via LuckPerms:
-  #   lp group default permission set evolvedskills.challenges.1 true
-  #   lp group vip permission set evolvedskills.challenges.1 true
-  #   lp group vip permission set evolvedskills.challenges.2 true
-  #   lp group vip permission set evolvedskills.challenges.3 true
-  #   lp group mvp permission set evolvedskills.challenges.1 true
-  #   ... (and so on up to evolvedskills.challenges.14)
-  #
-  # Challenge fields:
-  #   display-name  — Name shown on the item in the GUI.
-  #   description   — One-line objective shown in item lore. Use %amount% for the target.
-  #   icon          — Material name for the inventory icon.
-  #   match         — Resource key to track (lowercase material or entity type name).
-  #                   Mining: coal_ore, iron_ore, gold_ore, diamond_ore, emerald_ore,
-  #                           lapis_ore, redstone_ore, nether_quartz_ore, copper_ore,
-  #                           ancient_debris, amethyst_block, raw_iron, raw_gold, raw_copper,
-  #                           coal, diamond, redstone, glowstone, quartz, amethyst_shard
-  #                   Farming: oak_log, birch_log, spruce_log, dark_oak_log, acacia_log,
-  #                            jungle_log, crimson_stem, warped_stem, wheat, carrot, potato,
-  #                            beetroot, melon, melon_slice, pumpkin, cactus, sugar_cane,
-  #                            bamboo, sweet_berries, nether_wart, kelp, hay_block,
-  #                            cocoa_beans, glow_berries, brown_mushroom_block, red_mushroom_block
-  #                   Mobs:   zombie, skeleton, spider, cave_spider, creeper, enderman,
-  #                           blaze, wither_skeleton, ghast, shulker, strider, guardian,
-  #                           piglin, piglin_brute, zombified_piglin, drowned, husk, stray,
-  #                           bogged, phantom, breeze, slime, magma_cube, warden,
-  #                           cow, pig, sheep, chicken, rabbit, mushroom_cow, squid
-  #   amount        — How many times the player must trigger the match to complete.
-  #   reward:
-  #     money       — Vault money reward on claim.
-  #     player-xp   — Player XP reward on claim.
-  # ────────────────────────────────────────────────────────────────────────────
   challenges:
     count: 14
     pool:
 
-      # ── MINING ──────────────────────────────────────────────────────────────
 
       coal_rush_i:
         display-name: Coal Rush
@@ -771,7 +663,6 @@ daily:
           money: 500
           player-xp: 10
 
-      # ── FARMING — CROPS ─────────────────────────────────────────────────────
 
       wheat_harvest_i:
         display-name: Wheat Harvest
@@ -1043,7 +934,6 @@ daily:
           money: 420
           player-xp: 9
 
-      # ── FARMING — LOGS ──────────────────────────────────────────────────────
 
       oak_logger_i:
         display-name: Oak Logger
@@ -1145,7 +1035,6 @@ daily:
           money: 500
           player-xp: 10
 
-      # ── COMBAT — COMMON MOBS ────────────────────────────────────────────────
 
       zombie_slayer_i:
         display-name: Zombie Slayer
@@ -1317,7 +1206,6 @@ daily:
           money: 550
           player-xp: 11
 
-      # ── COMBAT — UNCOMMON MOBS ──────────────────────────────────────────────
 
       enderman_hunter_i:
         display-name: Enderman Hunter
@@ -1419,7 +1307,6 @@ daily:
           money: 1100
           player-xp: 22
 
-      # ── COMBAT — RARE MOBS ──────────────────────────────────────────────────
 
       wither_skeleton_reaper:
         display-name: Wither Skeleton Reaper
@@ -1471,7 +1358,6 @@ daily:
           money: 5000
           player-xp: 100
 
-      # ── COMBAT — PASSIVE MOBS ───────────────────────────────────────────────
 
       farmhand_cows:
         display-name: Farmhand

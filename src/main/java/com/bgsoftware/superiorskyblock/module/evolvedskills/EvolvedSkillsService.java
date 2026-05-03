@@ -1167,7 +1167,6 @@ public class EvolvedSkillsService {
             showJourneyBossBar(teleportingPlayer, getPlayerState(teleportingPlayer.getUniqueId()));
         }
 
-        // Bypass SSB2's safe-spot search — teleport directly to anchor top
         if (teleportingPlayer != null) {
             Player player = teleportingPlayer.asPlayer();
             if (player != null) {
@@ -1214,10 +1213,8 @@ public class EvolvedSkillsService {
             }
         }
 
-        // Single BEDROCK block directly under the oneblock
         world.getBlockAt(blockLoc.getBlockX(), blockLoc.getBlockY() - 1, blockLoc.getBlockZ()).setType(Material.BEDROCK, false);
 
-        // Place first configured oneblock material as the starter block
         WeightedMaterial starterWM = chooseOneBlockWeightedMaterial(0, 0, 0);
         Material starterMaterial = starterWM != null ? starterWM.material : config.oneBlockFallbackMaterial;
         Material starterDisplay = (starterWM != null && (starterWM.mobSpawn != null || UNSTABLE_BLOCK_TYPES.contains(starterMaterial)))
@@ -1227,7 +1224,6 @@ public class EvolvedSkillsService {
         IslandState islandState = getIslandState(islandId);
         islandState.oneblockAnchor = LocationKey.fromBlock(blockLoc.getBlock());
 
-        // Pre-seed the drop so the first break gives an item
         if (starterWM != null && starterWM.dropOverride != null) {
             islandState.pendingDropOverride = new ItemStack(starterWM.dropOverride, starterWM.dropOverrideAmount);
         } else if (starterWM == null || starterWM.mobSpawn == null) {
@@ -2602,8 +2598,6 @@ public class EvolvedSkillsService {
 
         Bukkit.getScheduler().runTask(plugin, () -> {
             block.setType(displayMaterial, false);
-            // After the block respawns, clip any player whose feet are inside it
-            // upward to the surface so they land on top instead of being pushed sideways
             double safeY = block.getY() + 1.01;
             for (org.bukkit.entity.Entity e : block.getWorld().getNearbyEntities(
                     block.getLocation().add(0.5, 1.0, 0.5), 0.7, 1.2, 0.7)) {

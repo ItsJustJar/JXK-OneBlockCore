@@ -1,20 +1,6 @@
-# Treasure drop links — maps resources to treasure pools with drop chances.
-#
-# resource-key: lowercase material name (blocks/node outputs) or entity type name (mobs)
-# Multiple pools per resource are rolled independently on each harvest.
-#
-# Format:
-#   resource_key:
-#     - pool: pool-name
-#       chance: 0.05   # 0.0–1.0 (e.g. 0.05 = 5% per harvest)
-
 links:
 
-  # ────────────────────────────────────────────────────────────────
-  # MINING — Oneblock display blocks + Node outputs
-  # ────────────────────────────────────────────────────────────────
 
-  # Tier 0-1 common
   coal_ore:
     - pool: mining-common
       chance: 0.05
@@ -34,7 +20,6 @@ links:
     - pool: mining-common
       chance: 0.05
 
-  # Tier 2-3 uncommon
   lapis_ore:
     - pool: mining-uncommon
       chance: 0.05
@@ -66,7 +51,6 @@ links:
     - pool: mining-uncommon
       chance: 0.05
 
-  # Tier 4-6 rare
   diamond_ore:
     - pool: mining-rare
       chance: 0.04
@@ -90,7 +74,6 @@ links:
     - pool: mining-rare
       chance: 0.03
 
-  # Tier 8 epic
   ancient_debris:
     - pool: mining-epic
       chance: 0.04
@@ -98,11 +81,7 @@ links:
     - pool: mining-epic
       chance: 0.04
 
-  # ────────────────────────────────────────────────────────────────
-  # FARMING — Oneblock display blocks + Node outputs + Natural crops
-  # ────────────────────────────────────────────────────────────────
 
-  # Logs (oneblock display + node output)
   oak_log:
     - pool: farming-common
       chance: 0.04
@@ -140,7 +119,6 @@ links:
     - pool: farming-common
       chance: 0.04
 
-  # Basic crops (oneblock display blocks + node outputs + natural breaks)
   hay_block:
     - pool: farming-common
       chance: 0.05
@@ -199,7 +177,6 @@ links:
     - pool: farming-common
       chance: 0.04
 
-  # Uncommon crops
   nether_wart_block:
     - pool: farming-uncommon
       chance: 0.05
@@ -234,7 +211,6 @@ links:
     - pool: farming-uncommon
       chance: 0.03
 
-  # Rare crops
   pitcher_plant:
     - pool: farming-rare
       chance: 0.03
@@ -254,11 +230,7 @@ links:
     - pool: farming-rare
       chance: 0.03
 
-  # ────────────────────────────────────────────────────────────────
-  # MOBS — Entity type names (lowercase)
-  # ────────────────────────────────────────────────────────────────
 
-  # Common mobs
   zombie:
     - pool: mob-common
       chance: 0.05
@@ -314,7 +286,6 @@ links:
     - pool: mob-common
       chance: 0.04
 
-  # Uncommon mobs
   enderman:
     - pool: mob-uncommon
       chance: 0.05
@@ -349,7 +320,6 @@ links:
     - pool: mob-uncommon
       chance: 0.04
 
-  # Rare mobs
   wither_skeleton:
     - pool: mob-rare
       chance: 0.05

@@ -1,27 +1,3 @@
-# ────────────────────────────────────────────────────────────────────────────
-# MILESTONES
-# ────────────────────────────────────────────────────────────────────────────
-# Milestones track cumulative resource collection across three skill tracks:
-#   mining    — resources from One Block breaks and Resource Node harvests
-#   farming   — crops/logs from grown plant breaks (not manually placed)
-#   slaying   — kills from mobs (natural + spawner-based)
-#
-# Each milestone type has 20 tiers. Players claim tiers sequentially; each
-# tier requires a certain cumulative count and rewards Skill XP + Player XP.
-#
-# Milestone type fields:
-#   display-name   Name shown in GUIs.
-#   description    Short description line shown in the milestone GUI.
-#   sort-order     Display order in the milestones menu (lower = first).
-#   min-perk-level Resource Access perk level required to unlock this type (0 = always visible).
-#   target-blocks  List of Bukkit Material names that count toward this milestone.
-#
-# Tier fields (under tiers: <number>:):
-#   required-count  Cumulative amount needed to claim this tier.
-#   skill-xp        Skill XP awarded on claim.
-#   player-xp       Player XP awarded on claim.
-# ────────────────────────────────────────────────────────────────────────────
-
 mining:
   stone:
     display-name: Stone Milestone

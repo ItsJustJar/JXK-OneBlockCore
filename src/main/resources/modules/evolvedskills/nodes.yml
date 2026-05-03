@@ -1,30 +1,3 @@
-# ────────────────────────────────────────────────────────────────────────────
-# RESOURCE NODES
-# ────────────────────────────────────────────────────────────────────────────
-# Resource Nodes are placeable structures that harvest materials over time.
-# Players craft a Node Seed from 8 fragments, place it on their island, and
-# left-click it to harvest when the growth bar is full.
-#
-# Each node type key must be unique (lowercase, underscore-separated).
-#
-# Node fields:
-#   display-name         Human-readable name shown in GUIs and messages.
-#   block                Bukkit Material for the display block. Must be a solid block.
-#   output               MATERIAL:AMOUNT  — item given on harvest.
-#   track                Skill track: MINING | FARMING | SLAYING
-#   growth-seconds       Seconds for one full growth cycle (harvest becomes available).
-#   cooldown-ticks       Ticks the block is bedrock after harvest before restoring.
-#                        20 ticks = 1 second. Default 1200 = 60 seconds.
-#   fragment-chance      0.0–1.0 chance to drop a Fragment on harvest.
-#   max-level            Max upgrade level. Each level increases storage capacity.
-#   upgrade-base-cost    Money cost to upgrade from level 1 to 2.
-#   upgrade-cost-multiplier  Each level multiplies cost: cost * multiplier ^ (level-1).
-#   max-storage-base     Items stored before needing a harvest at level 1.
-#   nexo-item-id         (Optional) Nexo item ID for custom texture. If set, the
-#                        block uses the Nexo note-block model for that ID.
-#   custom-model-data    (Optional) Fallback CMD for display item if Nexo unavailable.
-# ────────────────────────────────────────────────────────────────────────────
-
 types:
   stone:
     display-name: Stone Node

@@ -1,25 +1,3 @@
-# ────────────────────────────────────────────────────────────────────────────
-# ITEM TEMPLATES
-# ────────────────────────────────────────────────────────────────────────────
-# Defines the appearance of custom items used by EvolvedSkills.
-# %type% is replaced with the node/spawner display name at runtime.
-#
-# fragment      — Resource Fragment dropped from breaks/harvests/kills.
-#                 Used as upgrade currency for limits and growth caps.
-# nodes         — Node Seed item crafted from 8 fragments (ring recipe).
-#                 Place on island to create a Resource Node.
-# spawners      — Spawner Core item crafted from fragments.
-#                 Place on island to create an Evolved Spawner.
-# generators    — Generator block item given via admin command.
-#                 Place on island to produce resources passively.
-#
-# Item fields:
-#   material        Bukkit Material for the base item.
-#   name            Display name (supports & color codes).
-#   lore            List of lore lines (supports & color codes).
-#   custom-model-data  (Optional) Custom Model Data integer for resource pack textures.
-# ────────────────────────────────────────────────────────────────────────────
-
 fragment:
   material: PRISMARINE_SHARD
   name: '&b%type% ꜰʀᴀɢᴍᴇɴᴛ'
